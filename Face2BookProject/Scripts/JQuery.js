@@ -1,16 +1,27 @@
 ﻿$(document).ready(function () {
     $("#btnSignUp").hover(function () {
-        $(".fa-plus-circle").show("5000");
+        $(".fa-plus-circle").show("fast");
     },
         function () {
-            $(".fa-plus-circle").hide("10");
+            $(".fa-plus-circle").hide("fast");
         });
 });
 $(document).ready(function () {
     $("#btnLogin").hover(function () {
-        $(".fa-chevron-circle-right").show("5000");
+        $(".fa-chevron-circle-right").show();
     },
         function () {
-            $(".fa-chevron-circle-right").hide("10");
+            $(".fa-chevron-circle-right").hide();
         });
 });
+
+$(document).ready(function () {
+    $("#signuplink").on("mouseover", function () {
+        $(this).css("color", "red");
+    }).on("mouseout", function () {
+        $(this).css("color", "black");
+    });
+});
+
+
+

@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title></title>
+    <title>FACE2BOOK</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -24,11 +24,11 @@
                 Get started today.
             </p>
 
-            <button id="btnSignUp" type="button" class="btn btn-danger btnStyle" style="background-color:#FF0000; color:white;">
+            <button onclick="location.href='SignUp.aspx';" id="btnSignUp" type="button"  class="btn btn-danger btnStyle" style="background-color:#FF0000; color:white;">
                 SIGN UP
                 <i class="fas fa-plus-circle"></i>
             </button>
-            <button id="btnLogin" type="button" class="btn btn-light btnStyle" style="background-color:white; color:#FF0000;">
+            <button onclick="location.href='login.aspx';" id="btnLogin" type="button" class="btn btn-light btnStyle" style="background-color:white; color:#FF0000;">
                 LOGIN
                 <i class="fas fa-chevron-circle-right"></i>
             </button>

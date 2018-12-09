@@ -34,4 +34,15 @@ body, html {
 .fas{
     display:none;
 }
-    
+.loginsec {
+    margin-top: 40px;
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
+}
+.loginSideStyle{
+    background-color:white;
+}
+#signuplink:hover{
+    color:red;
+}
