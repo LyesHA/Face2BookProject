@@ -16,8 +16,8 @@
     sql = "INSERT INTO MEMBER (LastName, FirstName, Gender, GenderPref, DateOfBirth, Email, [Password]) VALUES('" + lastname + "','" + firstname + "','" + gender + "','" + interest +
     "','"+ year + "-" + month + "-" + day + "','" + email + "','" + pwd + "')";
     mycon.Execute(sql);
-    
-    Response.Redirect("Home.aspx");
+    Session("User") = email;
+    Response.Redirect("FillInformations.aspx?email="+email);
     
     
     

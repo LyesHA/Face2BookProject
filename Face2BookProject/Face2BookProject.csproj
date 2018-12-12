@@ -83,13 +83,16 @@
     <None Include="packages.config" />
     <Content Include="CreateAccount.aspx" />
     <Content Include="Css\Style.css" />
+    <Content Include="Data\face2book.accdb" />
     <Content Include="Default.aspx" />
+    <Content Include="FillInformations.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Picture\adult-blur-bride-247858.jpg" />
     <Content Include="Picture\affair-anniversary-asad-1024992.jpg" />
     <Content Include="Picture\affection-afterglow-backlit-556667.jpg" />
+    <Content Include="Picture\beach-couple-dawn-285938.jpg" />
     <Content Include="Picture\bride-clouds-couple-37521.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -122,6 +125,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="SignUp.aspx" />
+    <Content Include="UpdateAccount.aspx" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -152,6 +156,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FillInformations.aspx.cs">
+      <DependentUpon>FillInformations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FillInformations.aspx.designer.cs">
+      <DependentUpon>FillInformations.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +185,13 @@
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAccount.aspx.cs">
+      <DependentUpon>UpdateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAccount.aspx.designer.cs">
+      <DependentUpon>UpdateAccount.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
@@ -194,9 +212,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

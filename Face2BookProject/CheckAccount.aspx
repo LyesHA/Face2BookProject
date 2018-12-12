@@ -2,7 +2,7 @@
 
 
 <% 
-        var mycon = new ActiveXObject("ADODB.Connection");
+    var mycon = new ActiveXObject("ADODB.Connection");
     mycon.Open("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Lyes\\Desktop\\Collège Lasalle\\5e Session\\Programmation Internet 1\\prjP55_LyesHadjAissa\\Face2BookProject\\Face2BookProject\\Data\\face2book.accdb");
     var email = Request.QueryString("txtEmail");
     var psw = Request.QueryString("txtPassword");
@@ -17,10 +17,10 @@
     Session("Error")="Incorrect email or password, please try again";
     Response.Redirect("login.aspx");
     }
+    
+    Response.Redirect("Home.aspx?email="+myrec.Fields("Email").Value);
     myrec.Close();
     mycon.Close();
-    Response.Redirect("Home.aspx");
-    
     %>
 
 
