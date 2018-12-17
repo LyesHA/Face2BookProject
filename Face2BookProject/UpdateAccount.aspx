@@ -4,14 +4,18 @@
     var weight = parseInt(Request.Form("cboWeight"));
     var height = parseInt(Request.Form("cboHeight"));
     var description = Request.Form("txtDescription");
-    var picture = Request.Form("picture");
+    var eyes = Request.Form("cboEyes");
+//    var picture = Request.Form("picture");
     var mycon = new ActiveXObject("ADODB.Connection");
     mycon.Open("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Lyes\\Desktop\\Collège Lasalle\\5e Session\\Programmation Internet 1\\prjP55_LyesHadjAissa\\Face2BookProject\\Face2BookProject\\Data\\face2book.accdb");
     var sql = "UPDATE MEMBER"+
-              " SET Weight = " + weight + ", height = " + height + ", Description = '" + description
-    + "' WHERE Email =('" + Session("User") + "')";
+              " SET Weight = " + weight + ", height = " + height + ", EyeColor = '" + eyes + "', Description = '" + description
+   // + "' WHERE (Email ='" + Session("User") + "')";
+
     mycon.Execute(sql);
-    Response.Redirect("Home.aspx?email="Session("User"));
+    Response.Redirect("Home.aspx?email="+ Session("User"));
+
+    mycon.Close();
     %>
 
 <html>

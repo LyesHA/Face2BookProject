@@ -89,9 +89,12 @@
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="Picture\adult-affection-beard-842546.jpg" />
     <Content Include="Picture\adult-blur-bride-247858.jpg" />
     <Content Include="Picture\affair-anniversary-asad-1024992.jpg" />
     <Content Include="Picture\affection-afterglow-backlit-556667.jpg" />
+    <Content Include="Picture\attractive-beautiful-beautiful-girl-458766.jpg" />
+    <Content Include="Picture\attractive-black-and-white-boy-25733.jpg" />
     <Content Include="Picture\beach-couple-dawn-285938.jpg" />
     <Content Include="Picture\bride-clouds-couple-37521.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
