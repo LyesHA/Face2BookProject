@@ -2,19 +2,34 @@
 <% 
     var mycon = new ActiveXObject("ADODB.Connection");
     mycon.Open("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Lyes\\Desktop\\Collège Lasalle\\5e Session\\Programmation Internet 1\\prjP55_LyesHadjAissa\\Face2BookProject\\Face2BookProject\\Data\\face2book.accdb");
-    var email = Request.QueryString("email");
-    if(email==""){
-        email = Request.Form("email");
-    }
+    var cboHeightFrom = Request.Form("cboHeightFrom");
+    var cboHeightTo = Request.Form("cboHeightTo");
+    var cboWeightFrom = Request.Form("cboWeightFrom");
+    var cboWeightTo = Request.Form("cboWeightTo");
+    var eyes = Request.Form("cboEyes");
+
     var sql = "SELECT Member.LastName, Member.Gender, Member.EyeColor, Member.Weight, Member.Height, Member.FirstName, Member.DateOfBirth, Member.Description" + 
-          " FROM Member WHERE Gender = ( SELECT GenderPref FROM MEMBER WHERE Email = '" + email + "')" + 
+          " FROM Member WHERE Gender = ( SELECT GenderPref FROM MEMBER WHERE Email = '" + Session("User") + "')" + 
     " AND Email <> '" + Session("User") + "'";
 
+    if(eyes != ""){
+    sql += " AND EyeColor = '" + eyes + "'";
+    }
+
+    if(cboHeightFrom != "" && cboHeightTo != ""){
+    sql += " AND ( Height BETWEEN  " + cboHeightFrom + " AND " + cboHeightTo + " )";
+    }
+
+    if(cboWeightFrom != "" && cboWeightTo != ""){
+    sql += " AND ( Weight BETWEEN  " + cboWeightFrom + " AND " + cboWeightTo + " )";
+    }
+    
+
+    
     var myrec = new ActiveXObject("ADODB.Recordset");
     myrec.Open(sql,mycon);
 
 %>
-
 
 <!DOCTYPE html>
 
@@ -49,57 +64,6 @@
     <%
         if(!myrec.EOF){%>
     <div class="container jumbotron" style="margin-top:50px;">
-        <div>
-            <form action="Search.aspx" method="post">
-                   <div class="form-row" style="margin-bottom:20px;">
-        <div class="col">
-        <label style="color:#FF0000;" for="cboHeight">Height</label>
-              <select class="form-control" id="cboHeightFrom" name="cboHeightFrom">
-                                  <option value="" selected></option>
-                <%for(var i=140;i<210;i++){ %>
-                <option value="<%=i %>"><%=i %></option>
-                   <%} %>
-                </select>
-        <font color="red">To </font>
-            <select class="form-control" id="cboHeightTo" name="cboHeightTo">
-                                <option value="" selected></option>
-                <%for(var i=140;i<210;i++){ %>
-                <option value="<%=i %>"><%=i %></option>
-                   <%} %>
-                </select>
-             </div> 
-         <div class="col">
-        <label style="color:#FF0000;" for="cboWeight">Weight</label>
-              <select class="form-control" id="cboWeight" name="cboWeightFrom">
-                                  <option value="" selected></option>
-                <%for(var i=60;i<100;i++){ %>
-                <option value="<%=i %>"><%=i %></option>
-                   <%} %>
-                </select>
-             <font color="red">To </font>
-             <select class="form-control" id="cboWeightFrom" name="cboWeightTo">
-                                 <option value="" selected></option>
-                <%for(var i=60;i<100;i++){ %>
-                <option value="<%=i %>"><%=i %></option>
-                   <%} %>
-                </select>
-     </div>
-     <div class="col">
-            <label style="color:#FF0000;" for="ColorEyeSelect">Eye colors</label>
-            <select class="form-control" id="ColorEyeSelect" name="cboEyes">
-                <option value="" selected></option>
-                <option value="Black">Black</option>
-                <option value="Blue">Blue</option>
-                <option value="Green">Green</option>
-                <option value="Brown">Brown</option>
-             </select>
-     </div>       
-        </div>
-                
-                <input class="btn btn-danger" type="submit" value = "Search" />
-                <input class="btn btn-danger" type="reset" value = "Reset" />
-            </form>
-        </div>
       <div class="row align-items-center">
 <%while(!myrec.EOF){ %>
         <div class="col-lg-4">
@@ -108,7 +72,6 @@
               <img class="card-img-top" src="Picture/attractive-black-and-white-boy-25733.jpg" alt="Card image cap">
         <%}else{ %>
              <img class="card-img-top" src="Picture/attractive-beautiful-beautiful-girl-458766.jpg" alt="Card image cap">
-
          <%  } %>
   <div class="card-body">
     <h5 class="card-title"><%=myrec.Fields("FirstName").Value %> <%=myrec.Fields("LastName").Value%></h5>

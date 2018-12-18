@@ -16,7 +16,7 @@
 <body>
     <div class="bgimage">
         <div class="heroText">
-            <h1 style="font-size:50px; color:#FF0000; font-weight:bold;">FACE2BOOK!</h1>
+            <h1 class="headerSyle">FACE2BOOK!</h1>
             <hr style="width: 350px;background-color: #FF0000;height:3px;"/>
             <p>FACE2BOOK wants to put the excitement back in dating.
                 We match your interests to help you break the ice and give you online dating tips

@@ -1,8 +1,6 @@
 ﻿<%@  Language="javascript" %>
 <%
-    var Email = Request.QueryString("email");
-    
-    
+    var Email = Request.QueryString("email");  
     %>
 
 <html>

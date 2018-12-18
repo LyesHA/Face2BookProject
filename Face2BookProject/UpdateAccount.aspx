@@ -10,7 +10,7 @@
     mycon.Open("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Lyes\\Desktop\\Collège Lasalle\\5e Session\\Programmation Internet 1\\prjP55_LyesHadjAissa\\Face2BookProject\\Face2BookProject\\Data\\face2book.accdb");
     var sql = "UPDATE MEMBER"+
               " SET Weight = " + weight + ", height = " + height + ", EyeColor = '" + eyes + "', Description = '" + description
-   // + "' WHERE (Email ='" + Session("User") + "')";
+    + "' WHERE (Email ='" + Session("User") + "')";
 
     mycon.Execute(sql);
     Response.Redirect("Home.aspx?email="+ Session("User"));

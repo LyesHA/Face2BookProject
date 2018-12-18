@@ -24,6 +24,21 @@ body, html {
     transform: translate(-50%, -50%);
     color: white;
 }
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.headerStyle {
+    font-size: 50px;
+    color: #FF0000;
+    font-weight: bold;
+}
 
 .btnStyle{
     margin-right:10px;

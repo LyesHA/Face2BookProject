@@ -17,8 +17,8 @@
     Session("Error")="Incorrect email or password, please try again";
     Response.Redirect("login.aspx");
     }
-    
-    Response.Redirect("Home.aspx?email="+myrec.Fields("Email").Value);
+    Session("User") = myrec.Fields("Email").Value;
+    Response.Redirect("Home.aspx?email="+Session("User"));
     myrec.Close();
     mycon.Close();
     %>

@@ -8,10 +8,10 @@
 });
 $(document).ready(function () {
     $("#btnLogin").hover(function () {
-        $(".fa-chevron-circle-right").show();
+        $(".fa-chevron-circle-right").show("fast");
     },
         function () {
-            $(".fa-chevron-circle-right").hide();
+            $(".fa-chevron-circle-right").hide("fast");
         });
 });
 
@@ -20,8 +20,6 @@ $(document).ready(function () {
         $(this).css("color", "red");
     }).on("mouseout", function () {
         $(this).css("color", "black");
-    });
+   });
 });
-
-
 
